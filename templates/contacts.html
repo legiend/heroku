@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+	<div class="containe" id="cont">
+		<div class="cat-form">
+			<form action="ask" method="POST" id="askform">
+				<label for="">Ваш Email</label>
+				<input type="email" class="form-control validate[required,custom[email]]" name="email" id="email" placeholder="Email"value="{% if email %}{{email}}{% endif %}">
+				<label for="">Тема</label>
+				<input type="text" class="form-control validate[required,equals[theme]]" id="theme" name="theme" placeholder="Тема">
+				<label for="">Ваш вопрос</label>
+				<textarea rows="3" name="etext" class="form-control validate[required,equals[etext]]" id="etext"></textarea>
+				<button type="button" class="btn btn-default" id="askBtn">Задать вопрос</button>
+			</form>
+		</div>
+	</div>
+{% endblock %}

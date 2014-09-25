@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+	<div class="containe" id="cont">
+		<div class="info">
+			<img src="static/images/{% if photo %}{{photo}}{% else %}no_photo.jpg{% endif %}" alt="" class="avatar">
+			<div class="divisions">
+			<ul class="divis-title">
+				<li>Фамилия:</li>
+				<li>Имя:</li>
+				<li>E-mail:</li>
+				<li>Дата рождения:</li>
+				<li>Мобильный телефон:</li>
+			</ul>
+			</div>
+			<div class="divisions">
+				<ul class="divis-info">
+					{% if fam %}<li>{{fam}}</li>{% endif %}
+					{% if name %}<li>{{name}}</li>{% endif %}
+					{% if email %}<li>{{email}}</li>{% endif %}
+					{% if date %}<li>{{date}}</li>{% endif %}
+					{% if phone %}<li>{{phone}}</li>{% endif %}
+				</ul>
+				{{aaa}}
+			</div>
+		</div>
+	</div>
+{% endblock %}

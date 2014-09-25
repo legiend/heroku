@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+<link rel="stylesheet" href="static/validation/css/validationEngine.jquery.css" type="text/css"/>
+{% block body %}
+  <div class="container" id="cont">
+      <div class="center">{% if error %} {{error}} {% endif %}</div>
+    <div class="cat-form">
+      <form role="form" action="personal.html" method="POST" id="personal" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Фамилия</label>
+          <input type="text" class="form-control validate[required] text-input" type="text" name="fam" id="fam" placeholder="Фамилия" value="{% if fam %}{{fam}}{% endif %}">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Имя</label>
+          <input type="text" class="form-control validate[required] text-input" type="text" name="name" id="name" placeholder="Имя" value="{% if name %}{{name}}{% endif %}">
+        </div>
+        <div class="fns yt ujdjhbkf)orm-group">
+          <label for="exampleInputEmail1">Логин</label>
+          <input type="text" class="form-control validate[required] text-input" type="text" name="login" id="login" placeholder="Логин" value="{% if login %}{{login}}{% endif %}">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Новый Пароль</label>
+          <input type="password" class="form-control text-input" type="password" name="password" id="password" placeholder="Пароль">
+          <label for="exampleInputPassword1">Повторите пароль</label>
+          <input type="password" class="form-control text-input" type="password" name="password2" id="password2" placeholder="Повторите пароль">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email"  disabled class="form-control validate[required,custom[email]]" type="text" name="email" id="email" placeholder="Email" value="{% if email %}{{email}}{% endif %}">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Дата рождения</label>
+          <input class="form-control validate[required,custom[date]]" type="text" name="date" id="date" placeholder="Дата рождения" value="{% if date %}{{date}}{% endif %}">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Мобильный телефон</label>
+          <input type="text" class="form-control validate[required,custom[phone]]" name="phone" id="phone" placeholder="Enter phone" value="{% if phone %}{{phone}}{% endif %}">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile">Аватарка</label>
+          <input type="file" id="file" name="photo" accept="image/*">
+          <img src="static/images/{% if photo != "" %}{{photo}}{% else %}no_photo.jpg{% endif %}" alt="" class="personalImg">
+        </div>
+        <div class="form-group center">
+          <label for="exampleInputPassword1">Введите действующий пароль</label>
+          <input class="form-control validate[required] text-input" type="password" name="passwordcheck" id="checkpasperson" placeholder="Пароль">
+          <input id="save-pers" class="btn btn-default" value="Сохранить"/>
+          <input id="remove-page" class="btn btn-default" value="Удалить страницу"/>
+        </div>
+      </form>
+    </div>
+    {{aaa}}
+{% endblock %}
